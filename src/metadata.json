@@ -1,0 +1,14 @@
+{
+  "default": {
+    "title": "Carol Alves · Tatuagem Old School e Pintura",
+    "description": "Carol Alves, tatuadora e artista plástica. Tatuagens Old School, pinturas e desenho autoral."
+  },
+  "/": {
+    "title": "Carol Alves · Tatuagem Old School e Pintura",
+    "description": "Tatuagens Old School e pinturas autorais de Carol Alves, tatuadora e artista plástica. Veja o portfólio e solicite seu orçamento."
+  },
+  "/orcamento": {
+    "title": "Orçamento e simulador de tatuagem · Carol Alves",
+    "description": "Descreva sua ideia de tatuagem, simule a composição sobre uma foto sua e envie o pedido de orçamento para Carol Alves."
+  }
+}

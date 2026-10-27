@@ -10,6 +10,7 @@ import tailwindcss from '@tailwindcss/vite'
 dns.setDefaultResultOrder('ipv4first')
 
 export default defineConfig({
+    base: '/carol-alves/',
   resolve: {
     alias: {
       // O pacote do Macaly só existe dentro do editor deles; aqui vira um componente vazio.

@@ -22,7 +22,7 @@ export const SITE_CONFIG = {
   email: '',
 
   /** Perfil do Instagram (opcional). Ex.: 'https://instagram.com/usuario' */
-  instagramUrl: '',
+  instagramUrl: 'https://www.instagram.com/c.alvestattoo/',
 
   /** Cidade / estúdio (opcional). Ex.: 'São Paulo, SP' */
   location: 'Arraial do Cabo · Macaé · Búzios',

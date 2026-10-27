@@ -27,11 +27,9 @@ const TATTOO_IMAGES: Artwork[] = Object.entries(tattooFiles)
     }
   })
 export function TattooCarousel({ emptyTitle, emptyText }: { emptyTitle: string; emptyText: string }) {
-  const { t } = useLang()
-  const [page, setPage] = useState(0)
-  const perView = 3
-  const pages = Math.max(1, Math.ceil(TATTOO_IMAGES.length / perView))
-  const clampedPage = Math.min(page, pages - 1)
+    const { t } = useLang()
+  const scrollerRef = useRef<HTMLDivElement>(null)
+  const [view, setView] = useState({ page: 1, pages: 1, scrollable: false })
 
   if (TATTOO_IMAGES.length === 0) {
     return (
@@ -43,31 +41,47 @@ export function TattooCarousel({ emptyTitle, emptyText }: { emptyTitle: string; 
   }
 
 
-  const goTo = (dir: number) => {
-    setPage((p) => {
-      const next = p + dir
-      if (next < 0 || next >= pages) return p
-            return next
-    })
+    const goTo = (dir: number) => {
+    const el = scrollerRef.current
+    if (!el) return
+    const page = Math.round(el.scrollLeft / el.clientWidth)
+    const next = page + dir
+    if (next < 0 || next >= view.pages) return
+    el.scrollTo({ left: next * el.clientWidth, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const el = scrollerRef.current
+    if (!el) return
+    const sync = () => {
+      const page = Math.max(1, Math.round(el.scrollLeft / el.clientWidth) + 1)
+      setView({ page, pages: Math.max(1, Math.round(el.scrollWidth / el.clientWidth)), scrollable: el.scrollWidth > el.clientWidth + 1 })
+    }
+    sync()
+    el.addEventListener('scroll', sync, { passive: true })
+    window.addEventListener('resize', sync)
+    return () => {
+      el.removeEventListener('scroll', sync)
+        window.removeEventListener('resize', sync)
+    }
+  }, [])
 
   return (
     <div data-testid="tattoo-carousel" className="relative">
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-700 ease-out"
-          style={{ transform: `translateX(-${clampedPage * 100}%)` }}
-        >
-                    {TATTOO_IMAGES.map((img, i) => (
-            <div key={img.src} className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2.5">
+            <div
+        ref={scrollerRef}
+        className="scroller flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+        style={{ scrollbarWidth: 'none' }}
+      >
+                              {TATTOO_IMAGES.map((img, i) => (
+            <div key={img.src} className="w-full shrink-0 snap-start px-2.5 sm:w-1/2 lg:w-1/3">
               <CarouselSlide item={img} openLabel={t.lightbox.open} />
             </div>
           ))}
       </div>
-      </div>
             <CarouselNav
-        pages={pages}
-        current={clampedPage}
+              pages={view.pages}
+              current={view.page - 1}
         onPrev={() => goTo(-1)}
         onNext={() => goTo(1)}
         prevLabel={t.lightbox.prev}

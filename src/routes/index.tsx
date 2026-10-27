@@ -279,6 +279,36 @@ function Contact() {
             </span>
             <ArrowRight className="h-5 w-5 shrink-0 text-gold transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
+          {SITE_CONFIG.instagramUrl ? (
+            <a
+              href={SITE_CONFIG.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-4 flex items-center justify-between gap-4 border border-gold/40 p-5 transition-colors hover:border-gold hover:bg-gold/5"
+            >
+              <span className="flex items-center gap-3">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4 shrink-0 text-gold"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                <span className="flex flex-col">
+                  <span className="font-display text-lg italic text-ivory">{t.contact.instagramCta}</span>
+                  <span className="text-xs text-ivory-dim">{t.contact.instagramCtaLong}</span>
+                </span>
+              </span>
+              <ArrowRight className="h-5 w-5 shrink-0 text-gold transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </a>
+          ) : null}
         </div>
         <div className="lg:col-span-6 lg:col-start-7" data-reveal>
           <QuoteForm />

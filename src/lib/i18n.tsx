@@ -68,6 +68,8 @@ const pt = {
     intro: 'Descreva o projeto que você imagina. Quanto mais detalhes, melhor a conversa sobre desenho, tamanho e local.',
     simulatorCta: 'Simular a tatuagem sobre uma foto sua',
     channels: 'Canais',
+    instagramCta: 'Siga a página',
+    instagramCtaLong: 'Acompanhe os trabalhos mais recentes no Instagram.',
   },
   form: {
     name: 'Seu nome',
@@ -211,6 +213,8 @@ const en: Dict = {
     intro: 'Describe the project you have in mind. The more detail, the better the conversation about design, size and placement.',
     simulatorCta: 'Preview the tattoo on a photo of yourself',
     channels: 'Channels',
+    instagramCta: 'Follow the page',
+    instagramCtaLong: 'Follow the latest works on Instagram.',
   },
   form: {
     name: 'Your name',
@@ -352,6 +356,8 @@ const es: Dict = {
     intro: 'Describe el proyecto que imaginas. Cuantos más detalles, mejor la conversación sobre diseño, tamaño y ubicación.',
     simulatorCta: 'Simula el tatuaje sobre una foto tuya',
     channels: 'Canales',
+    instagramCta: 'Sigue la página',
+    instagramCtaLong: 'Acompaña los trabajos más recientes en Instagram.',
   },
   form: {
     name: 'Tu nombre',

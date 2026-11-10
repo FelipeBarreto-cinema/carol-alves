@@ -1,0 +1,6 @@
+media:
+  - name: flash
+    label: Flashes
+    input: public/flash
+    output: /carol-alves/flash
+    extensions: [jpg, jpeg, png, webp]

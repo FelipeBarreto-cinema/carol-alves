@@ -1,0 +1,1021 @@
+/* Página de pintura abstrata (/pintura) — estética do protótipo original.
+   Arquivo dedicado para não inflar o styles.css global; importado somente pela rota. */
+
+.paint-topbar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.paint-brand {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  font-size: 20px;
+  color: #eee8dd;
+}
+
+.paint-nav {
+  display: flex;
+  gap: clamp(18px, 3vw, 48px);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.paint-nav a {
+  color: #a9a195;
+  transition: color 0.25s;
+}
+
+.paint-nav a:hover {
+  color: #c59a66;
+}
+
+.paint-menu-btn {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .paint-nav {
+    display: none;
+  }
+  .paint-menu-btn {
+    display: block;
+  }
+}
+
+/* HERO */
+.paint-hero {
+  min-height: 780px;
+  height: 100svh;
+  max-height: 1050px;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(290px, 0.78fr) 1.22fr;
+  align-items: center;
+  padding: 100px 4.5vw 65px;
+  overflow: hidden;
+  background: #0c0c0b;
+}
+
+.paint-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+}
+
+.paint-kicker {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a9a195;
+}
+
+.paint-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(54px, 7vw, 108px);
+  line-height: 0.91;
+  letter-spacing: -0.045em;
+  margin: 30px 0 25px;
+  color: #eee8dd;
+}
+
+.paint-hero h1 em {
+  font-weight: 400;
+  color: #c6b8a4;
+}
+
+.paint-hero-copy p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 330px;
+  color: #d1c8bb;
+}
+
+/* SECTIONS */
+.paint-section {
+  padding: 110px 6vw;
+}
+
+.paint-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.paint-section h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(42px, 5.5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin: 13px 0 0;
+  color: #eee8dd;
+}
+
+.paint-section h2 em {
+  color: #c6b8a4;
+}
+
+.paint-section-intro {
+  max-width: 300px;
+  color: #b8b0a5;
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 3px;
+}
+
+/* GALERIA */
+.paint-gallery {
+  background: #eee8dd;
+  color: #171614;
+  padding-top: 95px;
+  padding-bottom: 105px;
+}
+
+.paint-gallery .paint-kicker {
+  color: #746c61;
+}
+
+.paint-gallery .paint-section-intro {
+  color: #645d54;
+}
+
+.paint-gallery h2 {
+  color: #171614;
+}
+
+.paint-filters {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 0 0 28px;
+}
+
+.paint-filter {
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 0 0 8px;
+  background: none;
+  color: #5d574f;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.paint-filter.active,
+.paint-filter:hover {
+  border-color: #9a7548;
+  color: #171614;
+}
+
+.paint-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 34px 22px;
+}
+
+.paint-card {
+  grid-column: span 4;
+  min-width: 0;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+
+.paint-card:nth-child(1),
+.paint-card:nth-child(4) {
+  grid-column: span 5;
+}
+
+.paint-card:nth-child(2),
+.paint-card:nth-child(5) {
+  grid-column: span 3;
+}
+
+.paint-card:nth-child(3),
+.paint-card:nth-child(6) {
+  grid-column: span 4;
+}
+
+.paint-thumb {
+  position: relative;
+  overflow: hidden;
+  background: #24211e;
+  aspect-ratio: 4 / 5;
+}
+
+.paint-card:nth-child(1) .paint-thumb,
+.paint-card:nth-child(4) .paint-thumb {
+  aspect-ratio: 1.2;
+}
+
+.paint-thumb svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.paint-card:hover .paint-thumb svg {
+  transform: scale(1.07);
+}
+
+.paint-view-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  background: rgba(12, 12, 11, 0.8);
+  color: #eee8dd;
+  padding: 11px 13px;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.paint-card:hover .paint-view-hint {
+  opacity: 1;
+  transform: none;
+}
+
+.paint-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 14px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.paint-meta small {
+  display: block;
+  color: #777066;
+  margin-top: 6px;
+  font-size: 9px;
+}
+
+.paint-meta .number {
+  color: #8c8174;
+}
+
+/* STATEMENT */
+.paint-statement {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8vw;
+  align-items: center;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.paint-statement-copy {
+  max-width: 480px;
+  color: #c4bcb1;
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.paint-statement-copy p {
+  margin-bottom: 20px;
+}
+
+/* ABOUT */
+.paint-about {
+  background: #e5ded2;
+  color: #191816;
+  display: grid;
+  grid-template-columns: 0.82fr 1fr;
+  gap: 7vw;
+  align-items: center;
+  padding: 90px 7vw;
+}
+
+.paint-about-photo {
+  min-height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: #44382d;
+}
+
+.paint-about-photo svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.paint-about-copy p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 530px;
+  color: #4f4941;
+}
+
+.paint-about .paint-kicker {
+  color: #766d62;
+}
+
+.paint-about h2 {
+  color: #191816;
+}
+
+/* PROCESS */
+.paint-process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+}
+
+.paint-process-visual {
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+}
+
+.paint-process-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+.paint-process-copy p {
+  max-width: 390px;
+  color: #bcb3a7;
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.paint-process-list {
+  border-top: 1px solid rgba(238, 232, 221, 0.22);
+  margin-top: 34px;
+}
+
+.paint-process-list div {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(238, 232, 221, 0.22);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.paint-process-list span.num {
+  color: #c59a66;
+}
+
+/* SPACE PANEL */
+.paint-space {
+  padding-top: 20px;
+}
+
+.paint-space-panel {
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #141414;
+}
+
+.paint-space-panel svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+}
+
+.paint-space-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+
+.paint-space-content {
+  position: relative;
+  z-index: 1;
+}
+
+.paint-space-content h2 {
+  font-size: clamp(44px, 6vw, 82px);
+}
+
+.paint-space-content p {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: #d1c8bb;
+}
+
+/* TEXT LINK */
+.paint-text-link {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid #c59a66;
+  padding: 0 0 10px;
+  margin-top: 24px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.paint-text-link span {
+  color: #c59a66;
+  font-size: 17px;
+  transition: transform 0.3s;
+}
+
+.paint-text-link:hover span {
+  transform: translate(4px, -2px);
+}
+
+/* CONTACT */
+.paint-contact {
+  background: #eee8dd;
+  color: #171614;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  padding: 110px 6vw;
+}
+
+.paint-contact .paint-kicker {
+  color: #766d62;
+}
+
+.paint-contact h2 {
+  color: #171614;
+}
+
+.paint-contact > div > p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 360px;
+  color: #5f574e;
+}
+
+/* FOOTER */
+.paint-footer {
+  padding: 27px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-top: 1px solid rgba(238, 232, 221, 0.22);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa196;
+}
+
+.paint-footer-brand {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  color: #eee8dd;
+  font-size: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .paint-hero {
+    min-height: 700px;
+    height: auto;
+    grid-template-columns: 1fr;
+    padding: 150px 5vw 40px;
+  }
+  .paint-hero-copy {
+    max-width: 530px;
+  }
+  .paint-section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+  .paint-section {
+    padding: 80px 5vw;
+  }
+  .paint-grid {
+    gap: 26px 14px;
+  }
+  .paint-card,
+  .paint-card:nth-child(n) {
+    grid-column: span 6;
+  }
+  .paint-card:nth-child(1),
+  .paint-card:nth-child(4) {
+    grid-column: span 7;
+  }
+  .paint-card:nth-child(2),
+  .paint-card:nth-child(5) {
+    grid-column: span 5;
+  }
+  .paint-statement,
+  .paint-about,
+  .paint-process,
+  .paint-contact {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .paint-about {
+    padding: 70px 5vw;
+  }
+  .paint-about-photo {
+    min-height: 450px;
+  }
+  .paint-process-visual {
+    height: 430px;
+  }
+}
+
+@media (max-width: 560px) {
+  .paint-hero {
+    padding-top: 125px;
+    min-height: 0;
+  }
+  .paint-hero h1 {
+    font-size: clamp(53px, 15vw, 78px);
+  }
+  .paint-section {
+    padding: 65px 5vw;
+  }
+  .paint-gallery {
+    padding-top: 65px;
+  }
+  .paint-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 12px;
+  }
+  .paint-card,
+  .paint-card:nth-child(n) {
+    grid-column: span 1;
+  }
+  .paint-card:nth-child(1),
+  .paint-card:nth-child(4) {
+    grid-column: span 2;
+  }
+  .paint-thumb,
+  .paint-card:nth-child(1) .paint-thumb,
+  .paint-card:nth-child(4) .paint-thumb {
+    aspect-ratio: 1 / 1.15;
+  }
+  .paint-card:nth-child(1) .paint-thumb,
+  .paint-card:nth-child(4) .paint-thumb {
+    aspect-ratio: 1.25;
+  }
+  .paint-statement {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .paint-about-photo {
+    min-height: 350px;
+  }
+  .paint-process-visual {
+    height: 350px;
+  }
+  .paint-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ============ MODAL ============ */
+.paint-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(7, 7, 7, 0.97);
+  display: none;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.5fr);
+  align-items: stretch;
+  padding: 30px;
+  gap: 30px;
+}
+
+.paint-modal.open {
+  display: grid;
+}
+
+.paint-modal-stage {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  background: #10100f;
+}
+
+.paint-modal-stage svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.15s ease-out;
+  cursor: zoom-in;
+  transform-origin: center;
+}
+
+.paint-modal-stage.zoomed svg {
+  transform: scale(2.2);
+  cursor: zoom-out;
+}
+
+.paint-modal-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 360px;
+}
+
+.paint-modal-side h2 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4vw, 64px);
+  line-height: 0.98;
+  font-weight: 400;
+  margin: 20px 0;
+  color: #eee8dd;
+}
+
+.paint-modal-side p {
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.8;
+  color: #bdb4a8;
+}
+
+.paint-modal-close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  z-index: 2;
+  border: 1px solid rgba(238, 232, 221, 0.22);
+  color: #eee8dd;
+  background: #10100f;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.paint-modal-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.paint-modal-controls button {
+  border: 1px solid rgba(238, 232, 221, 0.22);
+  background: none;
+  color: #eee8dd;
+  padding: 12px 15px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.paint-modal-note {
+  font-size: 9px;
+  color: #81796f;
+  margin-top: 18px;
+  letter-spacing: 0.1em;
+}
+
+/* ============ SALA IMERSIVA ============ */
+.paint-room {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #050505;
+  color: #eee8dd;
+  display: none;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.paint-room.open {
+  display: block;
+}
+
+.paint-room-world {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
+}
+
+.paint-room-world.entering {
+  animation: paintRoomArrival 1.7s cubic-bezier(0.18, 0.72, 0.2, 1) both;
+}
+
+@keyframes paintRoomArrival {
+  0% { transform: translateZ(-850px) scale(0.55); filter: blur(7px); opacity: 0.15; }
+  55% { filter: blur(1px); }
+  100% { transform: translateZ(0) scale(1); filter: blur(0); opacity: 1; }
+}
+
+.paint-room-shell {
+  position: absolute;
+  inset: -12%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--look-y, 0deg)) rotateY(var(--look-x, 0deg));
+  transition: transform 0.18s ease-out;
+}
+
+.paint-room-back {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 7%;
+  bottom: 11%;
+  background: radial-gradient(ellipse at 50% 40%, #292722 0, #121211 52%, #080808 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transform: translateZ(-520px);
+  box-shadow: inset 0 0 120px #000;
+}
+
+.paint-room-ceiling {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: -31%;
+  height: 40%;
+  background: linear-gradient(#070707, #1b1a17);
+  transform: rotateX(-70deg) translateZ(-200px);
+  transform-origin: bottom;
+}
+
+.paint-room-floor {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  bottom: -31%;
+  height: 45%;
+  transform: rotateX(68deg) translateZ(-160px);
+  transform-origin: top;
+  background: repeating-linear-gradient(90deg, transparent 0 9.8%, rgba(214, 181, 135, 0.08) 10%, transparent 10.2%), linear-gradient(#24211d, #080808 70%);
+  box-shadow: inset 0 40px 80px #000;
+}
+
+.paint-room-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: linear-gradient(90deg, #0b0b0a, #24221e 45%, #111110);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.paint-room-side.left { left: -16%; transform: rotateY(68deg) translateZ(-120px); transform-origin: right; }
+.paint-room-side.right { right: -16%; transform: rotateY(-68deg) translateZ(-120px); transform-origin: left; }
+
+.paint-room-light {
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  width: 55%;
+  height: 80%;
+  transform: translateX(-50%) translateZ(-400px);
+  background: radial-gradient(ellipse at 50% 10%, rgba(228, 194, 145, 0.16), transparent 60%);
+  pointer-events: none;
+}
+
+.paint-room-art-side {
+  position: absolute;
+  top: 45%;
+  width: min(17vw, 210px);
+  height: min(26vh, 280px);
+  padding: 7px;
+  background: #080808;
+  border: 1px solid #514536;
+  box-shadow: 0 15px 50px #000;
+  transition: opacity 0.5s;
+}
+
+.paint-room-art-side.one { left: 22%; transform: translate(-50%, -50%) translateZ(-600px) rotateY(13deg); }
+.paint-room-art-side.two { right: 22%; transform: translate(50%, -50%) translateZ(-600px) rotateY(-13deg); }
+.paint-room-art-side svg { width: 100%; height: 100%; display: block; }
+
+.paint-room-art-frame {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  width: min(39vw, 520px);
+  height: min(49vh, 560px);
+  transform: translate(-50%, -50%) translateZ(-480px);
+  padding: 12px;
+  background: #090909;
+  border: 1px solid #665744;
+  box-shadow: 0 25px 75px #000, 0 0 0 5px rgba(198, 164, 116, 0.035);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+  cursor: pointer;
+}
+
+.paint-room-art-frame svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.3)); }
+
+.paint-room-info {
+  position: absolute;
+  left: 5vw;
+  bottom: 6vh;
+  z-index: 2;
+  max-width: 340px;
+  text-shadow: 0 2px 12px #000;
+}
+
+.paint-room-info .paint-kicker { color: #c6a06f; }
+.paint-room-info h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); line-height: 0.98; font-weight: 400; margin: 12px 0; color: #eee8dd; }
+.paint-room-info p { font-size: 14px; line-height: 1.7; color: #c9c0b4; }
+
+.paint-room-start-btn {
+  background: rgba(9, 9, 8, 0.72);
+  color: #eee8dd;
+  border: 1px solid rgba(238, 232, 221, 0.3);
+  padding: 12px 15px;
+  letter-spacing: 0.12em;
+  font-size: 9px;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.paint-room-hud { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
+.paint-room-top { position: absolute; top: 26px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.paint-room-top button { pointer-events: auto; background: rgba(9, 9, 8, 0.72); color: #eee8dd; border: 1px solid rgba(238, 232, 221, 0.3); padding: 12px 15px; letter-spacing: 0.12em; font-size: 9px; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(8px); }
+.paint-room-help { position: absolute; right: 5vw; bottom: 6vh; text-align: right; font-size: 9px; line-height: 1.8; letter-spacing: 0.1em; color: #b8afa3; text-transform: uppercase; }
+
+.paint-room-start-screen {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  background: radial-gradient(ellipse at center, rgba(18, 17, 15, 0.72), rgba(0, 0, 0, 0.92));
+}
+
+.paint-room-start-inner { max-width: 520px; }
+.paint-room-start-inner h2 { font-family: var(--font-display); font-size: clamp(46px, 7vw, 88px); line-height: 0.9; font-weight: 400; margin: 18px 0; color: #eee8dd; }
+.paint-room-start-inner p { font-family: var(--font-display); font-size: 16px; line-height: 1.8; color: #c9c0b4; max-width: 420px; margin: 0 auto 26px; }
+
+.paint-room-controls { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+.paint-room-controls button { pointer-events: auto; background: rgba(8, 8, 8, 0.7); color: #eee8dd; border: 1px solid #50483d; width: 42px; height: 38px; font-size: 16px; cursor: pointer; }
+
+/* ============ VIAGEM DENTRO DA PINTURA ============ */
+.paint-journey {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow: hidden;
+  background: #070706;
+  color: #f2e9dc;
+  isolation: isolate;
+}
+
+.paint-journey-canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #27211c 0%, #090909 68%);
+}
+
+.paint-journey-scene {
+  position: absolute;
+  inset: -12%;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.paint-journey-depth {
+  position: absolute;
+  inset: -20%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.paint-journey-ribbon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 48% 52% 42% 58%;
+  mix-blend-mode: screen;
+  background: linear-gradient(120deg, var(--c1), var(--c2) 44%, var(--c3));
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.12);
+  animation: paintRibbonDrift var(--dur, 8s) ease-in-out infinite alternate;
+}
+
+@keyframes paintRibbonDrift {
+  0% { margin-left: -3%; margin-top: 2%; }
+  100% { margin-left: 4%; margin-top: -3%; }
+}
+
+.paint-journey-stroke {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  opacity: 0.65;
+  animation: paintStrokePass var(--sd, 5s) ease-in-out infinite alternate;
+}
+
+@keyframes paintStrokePass {
+  0% { margin-left: -7vw; opacity: 0.25; }
+  100% { margin-left: 7vw; opacity: 0.8; }
+}
+
+.paint-journey-grain {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.13;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+}
+
+.paint-journey-ui { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.paint-journey-top { position: absolute; left: 28px; right: 28px; top: 25px; display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; }
+.paint-journey-top button { pointer-events: auto; background: rgba(8, 8, 7, 0.4); border: 1px solid rgba(242, 233, 220, 0.4); color: #f2e9dc; padding: 12px 16px; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(12px); }
+
+.paint-journey-copy { position: absolute; left: 5vw; bottom: 6vh; max-width: 370px; text-shadow: 0 2px 22px #000; }
+.paint-journey-copy .paint-kicker { color: #e2b77c; }
+.paint-journey-copy h2 { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 58px); line-height: 0.95; font-weight: 400; margin: 12px 0; }
+.paint-journey-copy p { font-size: 14px; line-height: 1.7; color: #d4c8b8; }
+
+.paint-journey-instructions { position: absolute; right: 5vw; bottom: 6vh; text-align: right; color: rgba(242, 233, 220, 0.7); font-size: 9px; line-height: 1.9; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.paint-journey-start {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: radial-gradient(ellipse at center, rgba(12, 11, 10, 0.65), rgba(0, 0, 0, 0.88));
+}
+
+.paint-journey-start-inner { max-width: 570px; }
+.paint-journey-start-inner .paint-kicker { color: #e2b77c; }
+.paint-journey-start-inner h2 { font-family: var(--font-display); font-size: clamp(45px, 7vw, 86px); line-height: 0.9; font-weight: 400; margin: 20px 0; }
+.paint-journey-start-inner p { font-size: 16px; line-height: 1.8; color: #d4c8b8; max-width: 460px; margin: 0 auto 28px; }
+
+.paint-journey-action {
+  background: #e9dfd0;
+  color: #171512;
+  border-color: #e9dfd0;
+  padding: 16px 22px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.paint-journey-action:hover { background: #d2b58e; }
+
+.paint-journey-exit-note { font-size: 9px; color: #a69a8b; margin-top: 20px; letter-spacing: 0.1em; }
+
+@media (max-width: 650px) {
+  .paint-journey-top { top: 14px; left: 15px; right: 15px; }
+  .paint-journey-copy { left: 6vw; right: 6vw; bottom: 12vh; }
+  .paint-journey-instructions { right: 6vw; bottom: 3vh; font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paint-journey-ribbon, .paint-journey-stroke { animation: none; }
+}

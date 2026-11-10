@@ -1,4 +1,3 @@
-
 {
   "pt": {
     "langName": "Português",
@@ -17,7 +16,7 @@
       "home": "Carol Alves, página inicial"
     },
     "hero": {
-      "kicker": "Tatuagem Old School · Pintura · Desenho",
+      "kicker": "Tatuagem Old School · Pintura ",
       "tagline": "Linha firme, cor sólida, memória na pele.",
       "sub": "Tatuagens de tradição americana e pinturas autorais, desenhadas à mão e pensadas como imagem.",
       "ctaPortfolio": "Ver portfólio",
@@ -187,10 +186,18 @@
       "processTitle2": "da obra.",
       "processP": "Não existe um caminho único. O trabalho se desenvolve por camadas, experimentações e decisões que surgem durante o próprio fazer.",
       "processList": [
-        { "label": "Pesquisa e observação" },
-        { "label": "Experimentação de cores e materiais" },
-        { "label": "Construção de camadas e texturas" },
-        { "label": "Gesto, equilíbrio e composição" }
+        {
+          "label": "Pesquisa e observação"
+        },
+        {
+          "label": "Experimentação de cores e materiais"
+        },
+        {
+          "label": "Construção de camadas e texturas"
+        },
+        {
+          "label": "Gesto, equilíbrio e composição"
+        }
       ],
       "spaceEyebrow": "Imersão",
       "spaceTitle": "Entre na pintura.",
@@ -392,10 +399,18 @@
       "processTitle2": "of the artwork.",
       "processP": "There is no single path. The work develops through layers, experiments and decisions that emerge during the act of creation.",
       "processList": [
-        { "label": "Research and observation" },
-        { "label": "Experimenting with colors and materials" },
-        { "label": "Building layers and textures" },
-        { "label": "Gesture, balance and composition" }
+        {
+          "label": "Research and observation"
+        },
+        {
+          "label": "Experimenting with colors and materials"
+        },
+        {
+          "label": "Building layers and textures"
+        },
+        {
+          "label": "Gesture, balance and composition"
+        }
       ],
       "spaceEyebrow": "Immersion",
       "spaceTitle": "Step inside the painting.",
@@ -597,10 +612,18 @@
       "processTitle2": "de la obra.",
       "processP": "No existe un único camino. El trabajo se desarrolla a través de capas, experimentaciones y decisiones que surgen durante el propio proceso creativo.",
       "processList": [
-        { "label": "Investigación y observación" },
-        { "label": "Experimentación con colores y materiales" },
-        { "label": "Construcción de capas y texturas" },
-        { "label": "Gesto, equilibrio y composición" }
+        {
+          "label": "Investigación y observación"
+        },
+        {
+          "label": "Experimentación con colores y materiales"
+        },
+        {
+          "label": "Construcción de capas y texturas"
+        },
+        {
+          "label": "Gesto, equilibrio y composición"
+        }
       ],
       "spaceEyebrow": "Inmersión",
       "spaceTitle": "Entra en la pintura.",

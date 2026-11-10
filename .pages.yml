@@ -1,6 +1,327 @@
+
 media:
   - name: flash
     label: Flashes
     input: public/flash
     output: /carol-alves/flash
     extensions: [jpg, jpeg, png, webp]
+
+components:
+  languageContent:
+    type: object
+    label: Conteúdo do idioma
+    fields:
+      - name: hero
+        label: Apresentação principal
+        type: object
+        fields:
+          - name: kicker
+            label: Linha de apresentação
+            type: string
+          - name: tagline
+            label: Frase principal
+            type: text
+          - name: sub
+            label: Texto de apresentação
+            type: text
+          - name: ctaPortfolio
+            label: Botão do portfólio
+            type: string
+          - name: ctaQuote
+            label: Botão de orçamento
+            type: string
+          - name: scroll
+            label: Instrução de navegação
+            type: string
+          - name: frame
+            label: Identificação da cena
+            type: string
+
+      - name: artist
+        label: Sobre a artista
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+          - name: title
+            label: Título
+            type: string
+          - name: p1
+            label: Biografia - parágrafo 1
+            type: text
+          - name: p2
+            label: Biografia - parágrafo 2
+            type: text
+          - name: disciplines
+            label: Áreas de atuação
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: name
+                label: Nome da área
+                type: string
+              - name: text
+                label: Descrição
+                type: text
+          - name: portraitPending
+            label: Texto alternativo do retrato
+            type: string
+
+      - name: tattoos
+        label: Tatuagens
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+          - name: title
+            label: Título
+            type: string
+          - name: intro
+            label: Apresentação do trabalho
+            type: text
+          - name: empty
+            label: Título quando não houver trabalhos
+            type: string
+          - name: emptyText
+            label: Mensagem do portfólio
+            type: text
+          - name: followInstagram
+            label: Chamada para o Instagram
+            type: string
+
+      - name: paintings
+        label: Pinturas
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+          - name: title
+            label: Título
+            type: string
+          - name: intro
+            label: Apresentação das obras
+            type: text
+          - name: empty
+            label: Título quando não houver obras
+            type: string
+          - name: emptyText
+            label: Mensagem da galeria
+            type: text
+
+      - name: about
+        label: Visão artística
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+          - name: title
+            label: Título
+            type: text
+          - name: quote
+            label: Frase em destaque
+            type: text
+          - name: p1
+            label: Texto - parágrafo 1
+            type: text
+          - name: p2
+            label: Texto - parágrafo 2
+            type: text
+          - name: p3
+            label: Texto - parágrafo 3
+            type: text
+
+      - name: contact
+        label: Apresentação do contato
+        type: object
+        fields:
+          - name: eyebrow
+            label: Identificação da seção
+            type: string
+          - name: title
+            label: Título
+            type: string
+          - name: intro
+            label: Texto de apresentação
+            type: text
+          - name: simulatorCta
+            label: Chamada do simulador
+            type: string
+          - name: channels
+            label: Título dos canais
+            type: string
+
+      - name: footer
+        label: Rodapé
+        type: object
+        fields:
+          - name: line
+            label: Texto institucional
+            type: text
+
+      - name: paintPage
+        label: Página de pinturas
+        type: object
+        fields:
+          - name: navWorks
+            label: Menu - Obras
+            type: string
+          - name: navAbout
+            label: Menu - Sobre
+            type: string
+          - name: navProcess
+            label: Menu - Processo
+            type: string
+          - name: navContact
+            label: Menu - Contato
+            type: string
+          - name: kicker
+            label: Linha de apresentação
+            type: string
+          - name: heroTitle
+            label: Título principal
+            type: text
+          - name: heroSub
+            label: Subtítulo principal
+            type: text
+          - name: heroCta
+            label: Botão principal
+            type: string
+          - name: worksEyebrow
+            label: Identificação da galeria
+            type: string
+          - name: worksTitle
+            label: Título da galeria
+            type: string
+          - name: worksIntro
+            label: Apresentação da galeria
+            type: text
+          - name: filterAll
+            label: Filtro - Todas
+            type: string
+          - name: filterAbstract
+            label: Filtro - Abstratas
+            type: string
+          - name: filterStudies
+            label: Filtro - Estudos
+            type: string
+          - name: filterContrasts
+            label: Filtro - Contrastes
+            type: string
+          - name: viewHint
+            label: Instrução para visualizar obra
+            type: string
+          - name: statementEyebrow
+            label: Identificação do manifesto
+            type: string
+          - name: statementTitle1
+            label: Manifesto - título parte 1
+            type: string
+          - name: statementTitle2
+            label: Manifesto - título parte 2
+            type: string
+          - name: statementP1
+            label: Manifesto - parágrafo 1
+            type: text
+          - name: statementP2
+            label: Manifesto - parágrafo 2
+            type: text
+          - name: statementCta
+            label: Botão do manifesto
+            type: string
+          - name: aboutEyebrow
+            label: Identificação - sobre a artista
+            type: string
+          - name: aboutTitle
+            label: Sobre a artista - título
+            type: string
+          - name: aboutP1
+            label: Sobre a artista - parágrafo 1
+            type: text
+          - name: aboutP2
+            label: Sobre a artista - parágrafo 2
+            type: text
+          - name: aboutCta
+            label: Botão - sobre a artista
+            type: string
+          - name: processEyebrow
+            label: Identificação do processo
+            type: string
+          - name: processTitle1
+            label: Processo - título parte 1
+            type: string
+          - name: processTitle2
+            label: Processo - título parte 2
+            type: string
+          - name: processP
+            label: Processo - apresentação
+            type: text
+          - name: processList
+            label: Etapas do processo
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: label
+                label: Etapa
+                type: string
+          - name: spaceEyebrow
+            label: Identificação da imersão
+            type: string
+          - name: spaceTitle
+            label: Imersão - título
+            type: string
+          - name: spaceP
+            label: Imersão - apresentação
+            type: text
+          - name: spaceCta
+            label: Imersão - botão
+            type: string
+          - name: contactEyebrow
+            label: Identificação do contato
+            type: string
+          - name: contactTitle1
+            label: Contato - título parte 1
+            type: string
+          - name: contactTitle2
+            label: Contato - título parte 2
+            type: string
+          - name: contactP
+            label: Contato - apresentação
+            type: text
+          - name: contactTags
+            label: Contato - categorias
+            type: text
+          - name: contactCta
+            label: Botão de contato
+            type: string
+          - name: footerLine
+            label: Texto do rodapé
+            type: text
+
+content:
+  - name: site
+    label: Textos do site
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: pt
+        label: Português
+        component: languageContent
+      - name: en
+        label: English
+        component: languageContent
+      - name: es
+        label: Español
+        component: languageContent
+
+settings:
+  content:
+    merge: true

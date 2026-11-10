@@ -22,7 +22,11 @@ jobs:
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
-
+        
+      - name: Gerar flash.json
+        run: |
+          cd public/flash
+          ls | grep -iE '\.(jpe?g|png|webp)$' | jq -R . | jq -s . > flash.json
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:

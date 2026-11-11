@@ -6,6 +6,12 @@ media:
     output: /carol-alves/flash
     extensions: [jpg, jpeg, png, webp]
 
+  - name: tattoo
+    label: Fotos de tatuagens
+    input: img/tattoo
+    output: /img/tattoo
+    extensions: [jpg, jpeg, png, webp]
+
 components:
   languageContent:
     type: object

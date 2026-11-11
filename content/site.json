@@ -106,7 +106,8 @@
       "notConfigured": "Os canais de contato diretos estão sendo configurados. Você pode copiar sua mensagem já formatada.",
       "missing": "Preencha seu nome e a ideia do projeto.",
       "greeting": "Olá, Carol! Gostaria de solicitar um orçamento de tatuagem.",
-      "preview": "Prévia da mensagem"
+      "preview": "Prévia da mensagem",
+      "allRequired": "Preencha todos os campos obrigatórios."
     },
     "footer": {
       "line": "Tatuagem Old School, pintura e desenho autoral.",
@@ -319,7 +320,8 @@
       "notConfigured": "Direct contact channels are being set up. You can copy your formatted message.",
       "missing": "Please fill in your name and project idea.",
       "greeting": "Hi Carol! I would like to request a tattoo quote.",
-      "preview": "Message preview"
+      "preview": "Message preview",
+      "allRequired": "Please fill in all required fields."
     },
     "footer": {
       "line": "Old School tattooing, painting and original drawing.",
@@ -532,7 +534,8 @@
       "notConfigured": "Los canales de contacto directo se están configurando. Puedes copiar tu mensaje ya formateado.",
       "missing": "Completa tu nombre y la idea del proyecto.",
       "greeting": "¡Hola, Carol! Me gustaría pedir un presupuesto de tatuaje.",
-      "preview": "Vista previa del mensaje"
+      "preview": "Vista previa del mensaje",
+      "allRequired": "Completa todos los campos obligatorios."
     },
     "footer": {
       "line": "Tatuaje Old School, pintura y dibujo de autor.",

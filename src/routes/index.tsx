@@ -302,8 +302,8 @@ function Contact() {
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
                 <span className="flex flex-col">
-                  <span className="font-display text-lg italic text-ivory">{t.contact.instagramCta}</span>
-                  <span className="text-xs text-ivory-dim">{t.contact.instagramCtaLong}</span>
+                  <span className="font-display text-lg italic text-ivory">{t.tattoos.followInstagram}</span>
+                 
                 </span>
               </span>
               <ArrowRight className="h-5 w-5 shrink-0 text-gold transition-transform group-hover:translate-x-1" aria-hidden="true" />
